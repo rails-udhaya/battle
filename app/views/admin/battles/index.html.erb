@@ -1,0 +1,64 @@
+  <%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Battles"} %>
+  
+  
+   
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>battles List<span style="float:right"><%= link_to "Add Battle", new_admin_battle_path %></span></h3>
+                  <div class="panel_contents">
+                    <div>
+																				<% if @battles.blank? %>
+																						<table style="width:100%" class="reference">
+																									<tbody>
+																											<tr>
+																											<td>No battles added yet.</td>
+																											</tr>
+																											<tr>
+																											<td><%= link_to "Add Battle", new_admin_battle_path %></td>
+																											</tr>
+																										</tbody>
+																						</table>
+																				<% else %>
+																				<table style="width:100%" class="reference">
+																									<tbody>
+																									<tr>
+																										<th>Name</th>
+																										<th>ITEM-A Vs ITEM-B </th>		
+																										<th>ITEM-A COUNT </th>		
+																										<th>ITEM-B COUNT</th>		
+																										<th>Actions </th>		
+																									</tr>
+																									<% @battles.each do |battle| %>
+																									<tr>
+																										<td><%= battle.title %></td>
+																										<td><img src="<%=!battle.items.blank? ? battle.items.first.asset.url(:thumb) : '/assets/no-asset.jpg'%>"/>VS<img src="<%=!battle.items.blank? ? battle.items.last.asset.url(:thumb) : '/assets/no-asset.jpg'%>"/></td>		
+																							 <td>
+																								<%= battle.items.first.vote_count if !battle.items.blank?%>
+																							 </td>
+																								<td>
+																								<%=battle.items.last.vote_count if !battle.items.blank?%>
+																							 </td>
+																										<td>
+																												<%= link_to "show", battle_path(battle) ,:target=>"_blank"%> 
+																												<%#= link_to "Delete", admin_battle_path(battle), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
+																										</td>
+																									</tr>
+																									<%end%>
+																								</tbody>
+																						</table>
+																				<% end %>
+ 
+</div>
+                    <div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>

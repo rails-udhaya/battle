@@ -1,0 +1,59 @@
+<style>
+
+</style>
+<%if current_user%>
+
+<header class="main-header">
+   <div class="container-fluid">
+      <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Toddlerosity logo</a>
+      <nav class="main-nav">
+         <ul>
+            <li class="js-top-menu-home myline">
+               <a data-gtm-label="home-logged" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">
+               HOME
+               </a>
+            </li>
+            <li class="js-top-menu-todo  myline">
+               <a href="#">
+              ABOUT
+               </a>
+            </li>
+      <li class="js-top-menu-shopping  myline">
+               <a href="#">CONTACT</a>
+            </li>
+            <li class="dropdown header-user">
+               <a class="user-trigger" href="#">
+               <span class="user-pict-24"><img alt="" src="<%=current_user.avatar.url(:icon)%>" class="noscale"></span>
+               <%= current_user && !current_user.name.blank? ? current_user.name : "No Name"%>
+            <!--   <em class="unread-count">$0</em>-->
+               </a>
+               <div class="user-menu">
+                  <ul>
+                     <!--<li><a class="link-favorites" href="#">Collections</a></li>-->
+                     <li><a class="link-settings" href="<%= edit_user_path(current_user)%>">Settings</a></li>
+                     <li class="divi">&nbsp;</li>
+                     <li><a class="link-logout" href="/users/sign_out">Logout</a></li>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </nav>
+   </div>
+</header>
+<%else%>
+
+<header class="main-header">
+   <div class="container-fluid">
+      <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Toddlerosity logo</a>
+      <nav class="main-nav main-nav-guest">
+         <ul>
+            <li><a data-gtm-label="home" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">HOME</a></li>
+            <li><a rel="nofollow" data-gtm-label="start selling" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-open-popup-join js-gtm-event" href="#">ABOUT</a></li>
+            <li><a data-gtm-event="navigation" data-gtm-label="sign in" data-gtm-action="black-nav" class="js-open-popup-login js-gtm-event" href="#">CONTACT</a></li>
+            <li><a data-gtm-event="navigation" data-gtm-label="sign in" data-gtm-action="black-nav" class="js-open-popup-login js-gtm-event" href="/users/sign_in">SIGN IN</a></li>
+            <li><a data-gtm-event="navigation" data-gtm-label="join" data-gtm-action="black-nav" class="btn-green js-open-popup-join js-gtm-event" href="/users/sign_up">JOIN</a></li>
+         </ul>
+      </nav>
+   </div>
+</header>
+<%end%>

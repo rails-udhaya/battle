@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%if params["controller"] == "battles"%>
+		<title><%=@battle.items.first.title%> VS <%=@battle.items.last.title%></title>
+		<%else%>
+		<title>	Toddlerosity </title>
+  <%end%>
+  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="fb-root"></div>
+
+<script></script>
+<style>
+.row-fluid
+{
+		padding-top: 95px;
+}
+
+.main-category-search > .inner {
+    height: 45px !important;
+ 
+}
+.main-header
+{
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+		background-color: #3B5998 !important;
+}
+
+ 
+ 
+ 
+</style>
+<div id="main-wrapper" style=""><!--padding-top: 115px-->
+
+<!--HEADER-->
+<div id="main-wrapper-header">
+        
+<div class="main-flashes">
+                   
+				<% if flash[:notice] %>
+   <div data-alert="" class="flash-message flash-success">
+    <%= flash[:notice] %>
+    </div>
+   <% end %>
+           
+  <% if flash[:error] %>
+  <div class="flash-message flash-error">
+        <%= flash[:error] %>
+  </div>
+  <% end %>
+       
+  <% if flash[:alert] %>
+  <div data-alert="" class="flash-message flash-error">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
+                   
+        </div>
+								<%#=params["controller"]%>
+
+               
+  <%= render :partial => "common/logo_tabs"%>
+        <nav class="main-category-search" style="height:45px">
+  <%= render :partial => "common/category_search"%>
+  <%#= render :partial => "common/category_tab"%>
+        </nav>
+</div>
+<!--HEADER-->
+
+<!--Main Content-->
+<div class="main-content">
+<%=yield%>
+
+</div>
+<!--Main Content-->
+
+<!--footer-->
+  <%= render :partial => "common/footer"%>
+<!--footer-->
+
+</div>
+
+<%#= yield %>
+
+</body>
+</html>
+

@@ -1,0 +1,205 @@
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+
+
+<section class="">
+                        <div class="">
+
+ 
+
+                            <div class="mp-layout-wrapper">
+
+                                <div style="display: block;" class="mp-layout layout-auto layout-loader">
+                                    <div class="mp-box" style="padding-top:65px;padding-bottom: 50px;">
+<h1 itemprop="name" style="color: #555555;font-size: 40px;font-weight: 700;letter-spacing: -1px;line-height: 42px;word-wrap: break-word; margin-left: 196px; width: 780px; padding-bottom: 20px;text-align:center"><%=battle.title%></h1>
+
+		<div style="float: left;margin-left: 130px;padding: 20px;width: 200px;">
+																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=battle.items.first.title%></h4>
+																																								</div>
+																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
+																																								<div id=""></div>
+																																								</div>
+																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
+																																										<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=battle.items.last.title%></h4>
+																																								</div>
+																																								
+                           									
+																																								<div style="width: 99%;border:0px solid;float:left">
+																																								
+																																								
+																																								<div style="background-color: #FFFFFF;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
+																																								<span class="gig-pict-214" style="width:400px;height:304px">
+																																								<img width="400" height="304" src="<%=battle.items.first.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px"></span>
+																																								</div>
+																																									<div style="height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left;background-color:transparent">
+																																																				<span class="gig-pict-214" style="width:400px;height:304px;background-color:transparent" id="compare_chart">
+																																				<!--				<img width="400" height="304" src="http://dmcec0.fiverrcdn.com/4e5bf73e94a6f629c900461b/4ec6e8d4f325e12dea0008de/thumb-200x123-f.jpeg" data-reload="inprogress" style="width:400px;height:304px">-->
+																																				</span>
+																																									</div>
+																																									<div style="background-color: #FFFFFF;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
+																																																				<span class="gig-pict-214" style="width:400px;height:304px">
+																																								<img width="400" height="304" src="<%=battle.items.last.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px"></span>
+																																									
+																																									</div>
+																																								
+																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=battle.items.first.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																								</div>
+																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
+																																								<div id="share_div"></div>
+																																								</div>
+																																								<div style="float: left;margin-left: 200px;padding: 20px;width: 200px;">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=battle.items.last.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																								</div>
+																																								
+																																								
+																																								</div>
+
+                           
+
+
+																																				</div>
+                                </div>
+
+                                <div style="display: none;" class="mp-layout layout-lists layout-loader layout-loading">
+                                    <div class="mp-box mp-box-white nobot">
+                                        
+                                        <div class="box-row p-b-0">
+                                            
+                            <section class="mp-gig-columns-slim">
+
+
+                                <div class="gig-columns-slim loading" data-json-path="/gigs/endless_page_as_json?host=category&amp;type=endless_auto&amp;category_id=5&amp;limit=48&amp;filter=rating" data-load-more="true" data-hide-empty="false" data-gigs-shown="48" data-do-endless="true" data-box-id="ca5">
+                                    <div class="gig-items js-gig-items"></div>
+                                </div>
+
+                                <div class="gig-load-more">
+                                    <a href="#" class="btn-standard-lrg btn-white" rel="next">Load More</a>
+                                </div>
+
+                            </section>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+																				
+																				
+																				<script>
+																								$( ".vote_button").click(function() {
+																								 $(this).attr("id")
+												$.ajax({
+														type: "POST",
+														url: "<%=vote_battles_path%>",
+														data: { ite: $(this).attr("id")}
+												}).done(function( msg ) {
+														// Success
+												});
+				});
+ 
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 400 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10, "%");
+
+var svg = d3.select("#compare_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				
+				JSONData = [
+  { "letter": "<%=battle.items.first.title%>",   "frequency":"<%=battle.items.first.vote_count%>"},
+  { "letter": "<%=battle.items.last.title + " "%>",   "frequency": "<%=battle.items.last.vote_count%>"} 
+]
+
+var data = JSONData.slice()
+console.log(data)
+//~ d3.tsv("data.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(-40," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      //~ .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      //~ .text("Frequency");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.letter); })
+      //~ .attr("width", x.rangeBand())
+      .attr("width", 70)
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("height", function(d) { return height - y(d.frequency); });
+
+//~ });
+
+function type(d) {
+  d.frequency = +d.frequency;
+  return d;
+}
+
+
+ $('#share_div').share({
+        //~ networks: ['facebook','pinterest','googleplus','twitter','linkedin','tumblr','in1','email','stumbleupon','digg']
+        networks: ['facebook','twitter','googleplus']
+    });
+
+</script>

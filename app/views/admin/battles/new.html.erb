@@ -1,0 +1,92 @@
+   <%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Battles"} %>
+			
+			
+			<div class="without_sidebar" id="active_admin_content">
+<div class="columns">
+              <div style="width: 100.0%;" class="column">
+                <div class="panel">
+                  <h3>Create Challenge</h3>
+                  <div class="panel_contents">
+                    <div>
+																								<script type="text/javascript" src="/tiny_mce/tiny_mce.js"></script>
+<style>
+.desc
+{
+width:500px;
+}
+</style>
+
+<form method="post" id="new_battle" enctype="multipart/form-data" class="new_battle" action="/admin/battles" accept-charset="UTF-8"> 
+				
+ 			<p>
+    <label for="battle_title">Title</label><br>
+    <input type="text" size="30" name="battle[title]" id="battle_title">
+  </p>	
+</br>
+
+			<p>
+    <label for="battle_title">Description</label><br>
+    <textarea type="text" size="30" name="battle[description]" id="battle_description"></textarea>
+  </p>
+		
+</br>
+
+			<p>
+    <label for="item_title">Item 1 Name</label><br>
+    <input type="text" size="30" name="item[][title]" id="item_1_name">
+  </p>
+		</br>
+		<p>
+    <label for="item_Asset Image">Asset image 1</label><br>
+			<input type="file" name="item[][asset]" id="item_1_asset">
+  </p>
+		</br>
+		
+		<p>
+    <label for="battle_title">Item 2 Name</label><br>
+    <input type="text" size="30" name="item[][title]" id="item_2_name"></textarea>
+  </p>
+		</br>
+ 		<p>
+    <label for="item_Asset Image">Asset image 2</label><br>
+			<input type="file" name="item[][asset]" id="item_2_asset">
+  </p>
+		</br>
+
+ 
+</br>
+
+  <p><input type="submit" value="Submit" name="commit" id="battle_submit"></p>
+</form>
+
+																		<br>
+																		<br>
+																		<p><a href="/admin/battles">Back to Battles</a></p>
+																</div>
+														<div>
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

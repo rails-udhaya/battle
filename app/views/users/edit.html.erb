@@ -1,0 +1,144 @@
+<!--<div class="mp-box">
+<div class="box-row p-b-0">
+<h1>Editing user</h1>
+
+<%#= render 'form' %>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,  :autofocus => true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+<%#= link_to 'Show', @user %>
+
+</div>
+</div>-->
+
+ 
+<div class="main-content">
+                    					<div class="db-container container-fluid">
+
+                       	<div class="row-fluid">
+                            <div class="span12">
+                                
+
+                                <aside class="db-sidebar">
+                                    <div class="db-sidebar-inner">
+
+                                 
+                                    <nav class="db-nav">
+                                            <ul>
+																																												  <li><h5>SETTINGS</h5></li>
+                                                <li><a href="<%= edit_user_path(current_user)%>">Profile Settings</a></li>
+        
+                                            </ul>
+                                          <!--  <ul>
+                                                <li><h5>Actions</h5></li>
+                                                <li><a href="/users/usuganya/edit/change_password">Change Password</a></li>
+                                            </ul>-->
+
+                                        </nav>
+
+                                  
+
+</div>
+                                </aside>
+                                <section class="db-content cf">
+                                    <div class="db-content-inner span10">
+
+                                        <header class="db-header cf">
+                                            <h1>
+																																																Profile Settings
+                                            </h1>
+                                        </header>
+                                
+                                        <div class="profile-form">
+																																								<%= simple_form_for @user do |f| %>
+                                            <div class="errors">
+																																												  <%= f.error_notification %>
+                                            </div>
+                                       
+																																							<div class="form-row">
+                                        		<div class="label-wrap"><label >EMAIL</label></div>
+                                        		<div class="input-wrap" style="font-size: 12px;margin-top: 11px;">
+																																										<%= @user.email %>
+                                        		</div>
+                                        	</div>
+                             
+																																							<div class="form-row">
+                                        		<div class="label-wrap"><label>NAME</label></div>
+                                        		<div class="input-wrap">
+																																										<%= f.input :name,  :autofocus => true %>
+                                        		</div>
+                                        	</div>    
+																																									
+																																							<div class="form-row">
+                                        		<div class="label-wrap"><label>GENDER</label></div>
+                                        		<div class="input-wrap"  style="font-size: 12px;margin-top: 11px;">
+																																												<%= f.radio_button :gender, 'male', :checked => true %> M
+																																										<%= f.radio_button :gender, 'female' %> F
+                                        		</div>
+                                        	</div>						
+																																									
+																																							<div class="form-row">
+                                        		<div class="label-wrap"><label>DOB</label></div>
+                                        		<div class="input-wrap"  style="font-size: 12px;margin-top: 11px;">
+																																																										<input type="text" id="datepicker" name="user[dob]" value="<%=@user.dob%>">
+                                        		</div>
+                                        	</div>
+																																																		
+																																						<!--	<div class="form-row">
+                                        		<div class="label-wrap"><label>Avatar</label></div>
+                                        		<div class="input-wrap"  style="font-size: 12px;margin-top: 11px;">
+																																																								<%#= f.file_field :avatar %>
+                                        		</div>
+																																																								<img src="<%#=current_user.avatar.url(:thumb)%>"/>
+                                        	</div>-->
+																																									
+
+
+
+                                            <div class="form-row">
+                                            		<div class="label-wrap"><label for="user_profile_attributes_photo">PROFILE PHOTO</label></div>
+                                            		<div class="input-wrap">
+                                                        <span class="user-pict-100"><img src="<%=current_user.avatar.url(:thumb)%>"/></span>
+																																																																<%= f.file_field :avatar, :id=>"user_profile_attributes_photo" %>
+                                                        <p>This photo is your identity on Toddlerosity and appears on your profile and comments.</p>
+                                            		</div>
+                                            	</div>
+
+
+                                            <div class="form-buttons">
+                                                <input type="submit" value="SAVE CHANGES" name="commit" class="btn-standard btn-green disableonclick">
+                                            </div>
+
+                                            <div class="form-divi"></div>
+                 </div>
+   <%end%>
+    	                              	</div>
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+					</div>
+
+                </div>
+																
+																
+																<script>
+																$(".string.optional.control-label").hide()
+										$(function() {
+										$( "#datepicker" ).datepicker();
+										
+										});
+																</script>
