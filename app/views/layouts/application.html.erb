@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%if params["controller"] == "battles"%>
+  <%if params["controller"] == "battles" && !@battle.items.blank?%>
 		<title><%=@battle.items.first.title%> VS <%=@battle.items.last.title%></title>
 		<%else%>
 		<title>	Toddlerosity </title>

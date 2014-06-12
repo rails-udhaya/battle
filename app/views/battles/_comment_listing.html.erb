@@ -1,0 +1,13 @@
+    <ul class="reviews-list js-reviews-list cf" style="background-color:white">
+																																								<li class="thumb-rating-row first">
+ 
+            <span class="user-pict-50"><img width="50" height="50" src="<%=item_comment.user.avatar.blank? ? "/assets/missing-comment-image.png" :  item_comment.user.avatar(:medium)%>" class="noscale"></span>
+            <h4><a href="/mightymouseaust" rel="nofollow"><%=item_comment.user.name.blank? ? "No Name" :  item_comment.user.name%></a>
+            <span class="rating-date"><%= time_ago_in_words(item_comment.created_at) %> Ago</span></h4>
+        
+        <div class="msg-body">
+             
+           <%=item_comment.comment%>
+        </div>
+    </li>
+		</ul>

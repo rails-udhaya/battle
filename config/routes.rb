@@ -23,6 +23,7 @@ Fight::Application.routes.draw do
   resources :battles do
        collection do
         post 'vote'
+        post 'comment'
       end
   end
 

@@ -1,0 +1,4 @@
+ 
+	$("#item_holder_<%=@item.id%>").prepend('<%== escape_javascript(render :partial => "/battles/comment_listing.html" , :locals => {:item_comment => @comment}) %>').fadeIn('slow');
+	
+	$("#comment_text_<%=@item.id%>").val("")
