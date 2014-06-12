@@ -3,11 +3,16 @@ class BattlesController < ApplicationController
 		
 		def show
 				@battle = Battle.find(params[:id])
-				@first_item = @battle.items.first
-				@last_item = @battle.items.last
-				@first_item_comments = @first_item.comments.recent.limit(5).all if @first_item
-				@last_item_comments = @last_item.comments.recent.limit(5).all if @last_item
-				@user = current_user
+				if	@battle.is_public == true
+						@first_item = @battle.items.first
+						@last_item = @battle.items.last
+						@first_item_comments = @first_item.comments.recent.limit(5).all if @first_item
+						@last_item_comments = @last_item.comments.recent.limit(5).all if @last_item
+						@user = current_user
+				else
+						flash[:notice] = "No Available"
+						redirect_to root_path
+				end
 		end
 		
 		def vote

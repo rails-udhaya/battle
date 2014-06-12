@@ -17,7 +17,11 @@ Fight::Application.routes.draw do
     resource :home, :controller => "home" do
     end
       resources :users
-      resources :battles 
+      resources :battles  do
+        collection do
+         post 'battle_is_public'
+       end
+      end
     end
     
   resources :battles do

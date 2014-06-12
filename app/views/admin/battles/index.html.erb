@@ -29,6 +29,7 @@
 																										<th>ITEM-A Vs ITEM-B </th>		
 																										<th>ITEM-A COUNT </th>		
 																										<th>ITEM-B COUNT</th>		
+																										<th>IS PUBLIC</th>		
 																										<th>Actions </th>		
 																									</tr>
 																									<% @battles.each do |battle| %>
@@ -40,6 +41,9 @@
 																							 </td>
 																								<td>
 																								<%=battle.items.last.vote_count if !battle.items.blank?%>
+																							 </td>													
+																								<td>
+																								  <input type="checkbox" value="<%=battle.id%>" <%=battle.is_public == true ? "checked" : "" %> class="is_pub">
 																							 </td>
 																										<td>
 																												<%= link_to "show", battle_path(battle) ,:target=>"_blank"%> 
@@ -62,3 +66,20 @@
 										<div style="clear:both;"></div></div>
 										
 		</div>
+		
+		
+		<script>
+		 $('.is_pub').change(function () {
+ 
+										$.ajax({
+														type: "POST",
+														url: "<%=battle_is_public_admin_battles_path%>",
+														data: { 
+														bat: 		 $(this).val(),
+														is_pub: 	$(this)[0].checked
+														}
+												}).done(function( msg ) {
+														// Success
+												});
+       });
+		</script>

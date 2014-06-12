@@ -29,6 +29,13 @@ class Admin::BattlesController < ApplicationController
 				end
 		end
 		
+		
+		def battle_is_public
+				@battle = Battle.find params[:bat]
+				@battle.is_public = params[:is_pub]
+				@battle.save
+		end
+		
 		private		
 		def valid_record
 				return redirect_to admin_challenges_path if !Battle.exists?(params[:id])

@@ -71,13 +71,13 @@
 																																									</div>
 																																								
 																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
-																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Pop Me">
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
 																																								<div id="share_div"></div>
 																																								</div>
 																																								<div style="float: left;margin-left: 200px;padding: 20px;width: 200px;">
-																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Pop Me">
 																																								</div>
 																																								
 																																								
@@ -111,6 +111,7 @@
 <textarea style="width:547px; height: 100px;" id="comment_text_<%=@first_item.id%>"></textarea>
 <div style="padding: 10px; margin-left: 439px;">
 <input type="button" style="padding: 5px 6px;" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="comment_<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event comment_button" value="COMMENT">
+<img src="/assets/loading.gif" id="loading_<%=@first_item.id%>" style="display:none"/>
 </div>
 <%end%>
 </div>
@@ -141,6 +142,7 @@
 <textarea style="width:547px; height: 100px;"  id="comment_text_<%=@last_item.id%>"></textarea>
 <div style="margin-left: 439px;padding: 10px;">
 <input type="button" value="COMMENT" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event comment_button" id="comment_<%=@last_item.id%>" data-gtm-event="order" data-gtm-action="main_order" data-bonus-order="false" style="padding: 5px 6px;">
+<img src="/assets/loading.gif" id="loading_<%=@last_item.id%>" style="display:none"/>
 </div>
 <%end%>
 </div>
@@ -208,6 +210,9 @@
 		}
 		else
 		{
+		
+		$(this).hide()
+		$("#loading_" + $(this).attr("id").split("_")[1]).show()
 												$.ajax({
 														type: "POST",
 														url: "<%=comment_battles_path%>",
