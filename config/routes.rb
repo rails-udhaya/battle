@@ -20,6 +20,7 @@ Fight::Application.routes.draw do
       resources :battles  do
         collection do
          post 'battle_is_public'
+         post 'create_battle_main_asset'
        end
       end
     end
