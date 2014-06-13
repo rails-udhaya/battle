@@ -71,13 +71,13 @@
 																																									</div>
 																																								
 																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
-																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Pop Me">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
 																																								<div id="share_div"></div>
 																																								</div>
 																																								<div style="float: left;margin-left: 200px;padding: 20px;width: 200px;">
-																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Pop Me">
+																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
 																																								</div>
 																																								
 																																								
@@ -287,6 +287,15 @@ console.log(data)
       .attr("width", 70)
       .attr("y", function(d) { return y(d.frequency); })
       .attr("height", function(d) { return height - y(d.frequency); });
+				
+				  svg.selectAll(".text")
+				 .data(data)
+					 .enter().append("text")
+     .attr("x", function(d) { return x(d.letter)+20; })
+      .attr("y", function(d) { return y(d.frequency) -10; })
+      .attr("dy", ".75em")
+      .text(function(d) { return d.frequency + " Votes";});
+
 
 //~ });
 
