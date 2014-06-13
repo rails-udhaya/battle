@@ -5,9 +5,9 @@
   fill: steelblue;
 }
 
-.bar:hover {
-  fill: brown;
-}
+//~ .bar:hover {
+  //~ fill: brown;
+//~ }
 
 .axis {
   font: 10px sans-serif;
@@ -22,6 +22,26 @@
 
 .x.axis path {
   display: none;
+}
+
+.high
+{
+fill:green
+}
+
+.low
+{
+fill:orange
+}
+
+.equel
+{
+fill:blue
+}
+
+svg
+{
+		margin-left: 25px;
 }
 
 </style>
@@ -283,18 +303,18 @@ console.log(data)
     .enter().append("rect")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
-      //~ .attr("width", x.rangeBand())
+      .attr("id", function(d) { return "custom_" + d.frequency; })
       .attr("width", 70)
       .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+      .attr("height", function(d) { return height - y(d.frequency); })
 				
 				  svg.selectAll(".text")
 				 .data(data)
 					 .enter().append("text")
-     .attr("x", function(d) { return x(d.letter)+20; })
-      .attr("y", function(d) { return y(d.frequency) -10; })
+     .attr("x", function(d) { return x(d.letter)+17; })
+      .attr("y", function(d) { return y(d.frequency) - 15; })
       .attr("dy", ".75em")
-      .text(function(d) { return d.frequency + " Votes";});
+      .text(function(d) { return nFormatter(d.frequency)+ " Votes";});
 
 
 //~ });
@@ -304,11 +324,42 @@ function type(d) {
   return d;
 }
 
+function nFormatter(num) {
+     if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+     }
+     if (num >= 1000000) {
+        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+     }
+     if (num >= 1000) {
+        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+     }
+     return num;
+}
+
 
  $('#share_div').share({
         //~ networks: ['facebook','pinterest','googleplus','twitter','linkedin','tumblr','in1','email','stumbleupon','digg']
         networks: ['facebook','twitter','googleplus']
     });
+				
+				
+				if ($($(".bar")[0]).attr("id").split("_")[1]> $($(".bar")[1]).attr("id").split("_")[1])
+				{
+				$($(".bar")[0]).css("fill","#127a2d")
+				$($(".bar")[1]).css("fill","#FF7b00")
+ 
+				}	
+				else if ($($(".bar")[1]).attr("id").split("_")[1] > $(".bar")[0].attributes["id"].split("_")[1])
+				{
+								$($(".bar")[0]).css("fill","#FF7b00")
+								$($(".bar")[1]).css("fill","#127a2d")
+				}
+				else if ($($(".bar")[1]).attr("id").split("_")[1] == $(".bar")[0].attributes["id"].split("_")[1])
+				{
+								$($(".bar")[1]) 
+								$($(".bar")[0]) 
+				}
 
 </script>
 <%end%>
