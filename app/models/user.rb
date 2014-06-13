@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #~ , :token_authenticatable
   attr_accessible :email, :password, :password_confirmation, :name, :about, :remember_me, :locker_attributes, :role, :is_subscribed,:age, :gender, :dob,:avatar
   
-  has_attached_file :avatar, :styles => { :icon=>"24*24>" ,:medium => "50x50>", :thumb => "100x100>" }, :default_url => "/assets/missing-image.png"
+  has_attached_file :avatar, :styles => { :icon=>"24x24>" ,:medium => "50x50>", :thumb => "100x100>" }, :default_url => "/assets/missing-image.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   
   validates_presence_of :email
