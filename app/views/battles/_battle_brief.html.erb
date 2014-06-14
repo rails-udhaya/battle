@@ -65,9 +65,9 @@ svg
 																																<%if !@first_item.blank? && !@last_item.blank? %>
                                     <div class="mp-box" style="padding-top:65px;padding-bottom: 50px;background:url('/assets/linen.png') repeat">
 																																				
-<h1 itemprop="name" style="color: #555555;font-size: 40px;font-weight: 700;letter-spacing: -1px;line-height: 42px;word-wrap: break-word; margin-left: 196px; width: 780px; padding-bottom: 20px;text-align:center"><%=battle.title%></h1>
+<h1 itemprop="name" style="color: #555555;font-size: 40px;font-weight: 700;letter-spacing: -1px;line-height: 42px;word-wrap: break-word;width: 100%; padding-bottom: 20px;text-align:center"><%=battle.title%></h1>
 
-		<div style="float: left;margin-left: 130px;padding: 20px;width: 200px;">
+																																						<!--<div style="float: left;margin-left: 130px;padding: 20px;width: 200px;">
 																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@first_item.title%></h4>
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
@@ -76,41 +76,63 @@ svg
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
 																																										<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@last_item.title%></h4>
 																																								</div>
-																																								
+																																								-->
                            									
-																																								<div style="width: 99%;border:0px solid;float:left">
+																																								<div style="width: 100%;border:0px solid;float:left">
 																																								
 																																								
-																																								<div style="background-color: #FFFFFF;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
-																																								<span class="gig-pict-214" style="width:400px;height:304px">
-																																								<img width="400" height="304" src="<%=@first_item.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px"></span>
+																																								<div style="border: 0px solid;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
+																																										<div style=" padding-top: 20px;text-align: center;width: 100%;">
+																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@first_item.title%></h4>
 																																								</div>
-																																									<div style="height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left;background-color:transparent">
-																																																				<span class="gig-pict-214" style="width:400px;height:304px;background-color:transparent" id="compare_chart">
-																																				<!--				<img width="400" height="304" src="http://dmcec0.fiverrcdn.com/4e5bf73e94a6f629c900461b/4ec6e8d4f325e12dea0008de/thumb-200x123-f.jpeg" data-reload="inprogress" style="width:400px;height:304px">-->
-																																				</span>
-																																									</div>
-																																									<div style="background-color: #FFFFFF;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);height:300px;margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
-																																																				<span class="gig-pict-214" style="width:400px;height:304px">
-																																								<img width="400" height="304" src="<%=@last_item.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px"></span>
-																																									
-																																									</div>
-																																								
-																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
+																																								<span class="gig-pict-214" style="width:400px;height:304px">
+																																								<img width="400" height="304" src="<%=@first_item.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px">
+																																								</span>
+																																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
 																																							
 																																								<img src="/assets/loading2.gif" id="loading2_<%=@first_item.id%>" style="display:none;width:30px;height:30px;margin-left: 53px;"/>
 																																								</div>
-																																								<div style="float: left;margin-left: 180px;padding: 20px;width: 200px;">
+																																				
+																																								</div>
+																																					
+
+																																								<div style="margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left;background-color:transparent">
+																																									<div style="float: left;margin-left: 114px;padding: 20px;width: 200px;">
+																																								<div id=""><img src="/assets/icon-vs.png" style="width:50px;margin-left:41px"></div>
+																																								</div>
+																																																				<span class="gig-pict-214" style="width:400px;height:304px;background-color:transparent" id="compare_chart">
+																																				<!--				<img width="400" height="304" src="http://dmcec0.fiverrcdn.com/4e5bf73e94a6f629c900461b/4ec6e8d4f325e12dea0008de/thumb-200x123-f.jpeg" data-reload="inprogress" style="width:400px;height:304px">-->
+																																				</span>
+																																									 
+																																								<div style="float: left;margin-left: 110px;padding: 20px;width: 200px;">
 																																								<div id="share_div"></div>
 																																								</div>
-																																								<div style="float: left;margin-left: 170px;padding: 20px;width: 200px;">
+																																							
+																																									</div>
+																															
+
+
+																																								<div style="border:0px solid;box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);margin: 1px 0 0 3px;padding-bottom: 5px;padding-left: 0;transition: height 0.1s ease-in-out 0s, margin 0.1s ease-in-out 0s;width:400px;float:left">
+																																											<div style=" padding-top: 20px;text-align: center;width: 100%;">
+																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@last_item.title%></h4>
+																																								</div>
+																																																				<span class="gig-pict-214" style="width:400px;height:304px">
+																																								<img width="400" height="304" src="<%=@last_item.asset(:main)%>" data-reload="inprogress" style="width:400px;height:304px">
+																																								</span>
+																																																						<div style="float: left;margin-left: 110px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
 																																										<img src="/assets/loading2.gif" id="loading2_<%=@last_item.id%>" style="display:none;width:30px;height:30px;margin-left: 53px;"/>
 																																								</div>
 																																								
 																																								
-																																								</div>
+																																									</div>
+																																								
+																																 
+																															 
+																																								
+																																						
+																																						</div>
 
                            
 
@@ -127,7 +149,7 @@ svg
                                     <header class="reviews-header cf" style="background-color:#e8e5e1">
 																																				
                                         
-                                        <div class="reviews-header-general cf">
+                                        <div class="reviews-header-general cf" >
                                             <h4>Comments For (<%=@first_item.title%>)</h4>
                                         </div>
                                     </header>
@@ -137,8 +159,8 @@ svg
 				<li><h4 style="color: #3B5998;font-size: 21px;margin-left: 10px;margin-top: 16px;">Please <a href="/users/sign_in">login</a> to Comment </h4></li>
 </ul>
 <%else%>
-<textarea style="width:547px; height: 100px;" id="comment_text_<%=@first_item.id%>"></textarea>
-<div style="padding: 10px; margin-left: 439px;">
+<textarea style="width:100%; height: 100px;" id="comment_text_<%=@first_item.id%>"></textarea>
+<div style="padding: 10px; width: 95%;">
 <input type="button" style="padding: 5px 6px;" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="comment_<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event comment_button" value="COMMENT">
 <img src="/assets/loading.gif" id="loading_<%=@first_item.id%>" style="display:none"/>
 </div>
@@ -168,8 +190,8 @@ svg
 				<li><h4 style="color: #3B5998;font-size: 21px;margin-left: 67px;margin-top: 16px;">Please <a href="/users/sign_in">login</a> to Comment </h4></li>
 </ul>
 <%else%>
-<textarea style="width:547px; height: 100px;"  id="comment_text_<%=@last_item.id%>"></textarea>
-<div style="margin-left: 439px;padding: 10px;">
+<textarea style="width:100%; height: 100px;"  id="comment_text_<%=@last_item.id%>"></textarea>
+<div style="width: 95%;padding: 10px;">
 <input type="button" value="COMMENT" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event comment_button" id="comment_<%=@last_item.id%>" data-gtm-event="order" data-gtm-action="main_order" data-bonus-order="false" style="padding: 5px 6px;">
 <img src="/assets/loading.gif" id="loading_<%=@last_item.id%>" style="display:none"/>
 </div>
