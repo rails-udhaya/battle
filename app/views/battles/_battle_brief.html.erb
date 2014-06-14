@@ -57,7 +57,7 @@ svg
 
                                 <div style="display: block;" class="mp-layout layout-auto layout-loader">
 																																<%if !@first_item.blank? && !@last_item.blank? %>
-                                    <div class="mp-box" style="padding-top:65px;padding-bottom: 50px;">
+                                    <div class="mp-box" style="padding-top:65px;padding-bottom: 50px;background:url('/assets/linen.png') repeat">
 																																				
 <h1 itemprop="name" style="color: #555555;font-size: 40px;font-weight: 700;letter-spacing: -1px;line-height: 42px;word-wrap: break-word; margin-left: 196px; width: 780px; padding-bottom: 20px;text-align:center"><%=battle.title%></h1>
 
@@ -65,7 +65,7 @@ svg
 																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@first_item.title%></h4>
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
-																																								<div id=""></div>
+																																								<div id=""><img src="/assets/icon-vs.png" style="width:50px;margin-left:43px"></div>
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
 																																										<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@last_item.title%></h4>
@@ -92,12 +92,15 @@ svg
 																																								
 																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																							
+																																								<img src="/assets/loading2.gif" id="loading2_<%=@first_item.id%>" style="display:none;width:30px;height:30px"/>
 																																								</div>
-																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
+																																								<div style="float: left;margin-left: 180px;padding: 20px;width: 200px;">
 																																								<div id="share_div"></div>
 																																								</div>
-																																								<div style="float: left;margin-left: 200px;padding: 20px;width: 200px;">
+																																								<div style="float: left;margin-left: 170px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
+																																										<img src="/assets/loading2.gif" id="loading2_<%=@last_item.id%>" style="display:none;width:30px;height:30px"/>
 																																								</div>
 																																								
 																																								
@@ -212,7 +215,9 @@ svg
 			<%if !@first_item.blank? && !@last_item.blank? %>																		
 																				<script>
 																								$( ".vote_button").click(function() {
-																								 $(this).attr("id")
+																								$(this).hide()
+																								$(this).next().show()
+																								$(this).attr("id")
 												$.ajax({
 														type: "POST",
 														url: "<%=vote_battles_path%>",
@@ -303,6 +308,7 @@ console.log(data)
     .enter().append("rect")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
+						//~ there is a flaw in this id
       .attr("id", function(d) { return "custom_" + d.frequency; })
       .attr("width", 70)
       .attr("y", function(d) { return y(d.frequency); })
@@ -344,18 +350,25 @@ function nFormatter(num) {
     });
 				
 				
-				if ($($(".bar")[0]).attr("id").split("_")[1]> $($(".bar")[1]).attr("id").split("_")[1])
+				
+				console.log(parseInt($($(".bar")[0]).attr("id").split("_")[1]) >  parseInt($($(".bar")[1]).attr("id").split("_")[1]))
+				console.log (parseInt($($(".bar")[1]).attr("id").split("_")[1]) >  parseInt($($(".bar")[0]).attr("id").split("_")[1]))
+				console.log (parseInt($($(".bar")[1]).attr("id").split("_")[1]) ==  parseInt($($(".bar")[0]).attr("id").split("_")[1]))
+				
+				if (parseInt($($(".bar")[0]).attr("id").split("_")[1]) >  parseInt($($(".bar")[1]).attr("id").split("_")[1]))
 				{
-				$($(".bar")[0]).css("fill","#127a2d")
-				$($(".bar")[1]).css("fill","#FF7b00")
+
+												$($(".bar")[0]).css("fill","#127a2d")
+												$($(".bar")[1]).css("fill","#FF7b00")
  
 				}	
-				else if ($($(".bar")[1]).attr("id").split("_")[1] > $(".bar")[0].attributes["id"].split("_")[1])
+				else if (parseInt($($(".bar")[1]).attr("id").split("_")[1]) >  parseInt($($(".bar")[0]).attr("id").split("_")[1]))
 				{
 								$($(".bar")[0]).css("fill","#FF7b00")
 								$($(".bar")[1]).css("fill","#127a2d")
+								
 				}
-				else if ($($(".bar")[1]).attr("id").split("_")[1] == $(".bar")[0].attributes["id"].split("_")[1])
+				else if (parseInt($($(".bar")[1]).attr("id").split("_")[1]) ==  parseInt($($(".bar")[0]).attr("id").split("_")[1]))
 				{
 								$($(".bar")[1]) 
 								$($(".bar")[0]) 
