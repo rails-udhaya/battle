@@ -44,6 +44,12 @@ svg
 		margin-left: 25px;
 }
 
+.labelText
+{
+	   font-size: 18px;
+    font-weight: bolder;
+}
+
 </style>
 
 
@@ -65,7 +71,7 @@ svg
 																																								<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@first_item.title%></h4>
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
-																																								<div id=""><img src="/assets/icon-vs.png" style="width:50px;margin-left:43px"></div>
+																																								<div id=""><img src="/assets/icon-vs.png" style="width:50px;margin-left:41px"></div>
 																																								</div>
 																																								<div style="float: left;margin-left: 150px;padding: 20px;width: 200px;">
 																																										<h4 style=" font-size: 24px;font-weight: 700;line-height: 26px;padding-bottom: 20px;"><%=@last_item.title%></h4>
@@ -93,14 +99,14 @@ svg
 																																								<div style="float: left;margin-left: 100px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@first_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
 																																							
-																																								<img src="/assets/loading2.gif" id="loading2_<%=@first_item.id%>" style="display:none;width:30px;height:30px"/>
+																																								<img src="/assets/loading2.gif" id="loading2_<%=@first_item.id%>" style="display:none;width:30px;height:30px;margin-left: 53px;"/>
 																																								</div>
 																																								<div style="float: left;margin-left: 180px;padding: 20px;width: 200px;">
 																																								<div id="share_div"></div>
 																																								</div>
 																																								<div style="float: left;margin-left: 170px;padding: 20px;width: 200px;">
 																																								<input type="button" data-bonus-order="false" data-gtm-action="main_order" data-gtm-event="order" id="<%=@last_item.id%>" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event vote_button" value="Vote Me">
-																																										<img src="/assets/loading2.gif" id="loading2_<%=@last_item.id%>" style="display:none;width:30px;height:30px"/>
+																																										<img src="/assets/loading2.gif" id="loading2_<%=@last_item.id%>" style="display:none;width:30px;height:30px;margin-left: 53px;"/>
 																																								</div>
 																																								
 																																								
@@ -317,10 +323,11 @@ console.log(data)
 				  svg.selectAll(".text")
 				 .data(data)
 					 .enter().append("text")
-     .attr("x", function(d) { return x(d.letter)+17; })
+						 .attr("class", "labelText")
+     .attr("x", function(d) { return x(d.letter)+30; })
       .attr("y", function(d) { return y(d.frequency) - 15; })
       .attr("dy", ".75em")
-      .text(function(d) { return nFormatter(d.frequency)+ " Votes";});
+      .text(function(d) { return nFormatter(d.frequency);});
 
 
 //~ });
