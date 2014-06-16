@@ -89,5 +89,11 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 <%#= yield %>
 
 </body>
+<script>
+$('.main-flashes :visible').length  > 0
+{
+$('.main-flashes :visible').delay(3000).fadeOut("slow");
+}
+</script>
 </html>
 
