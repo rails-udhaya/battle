@@ -8,11 +8,13 @@ development:
 staging:
   mail_chimp_api_key: "5f4bb7c596078d9d538075c5a3094abd-us8"
   mail_chimp_list_key: "6c61fd5daa"
-  facebook_key: "251649335038800"
-  facebook_secret: "5d9b536ea4c867a3620bead806c47a0b"
+  facebook_key: " "
+  facebook_secret: " "
   site_url: "http://staging-toddlerosity.herokuapp.com"
   
 production:
   mail_chimp_api_key: "5f4bb7c596078d9d538075c5a3094abd-us8"
   mail_chimp_list_key: "6c61fd5daa"
+  facebook_key: ""
+  facebook_secret: ""
   site_url: "http://mycombate.com"
