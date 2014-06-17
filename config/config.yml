@@ -1,18 +1,18 @@
 development:
-  mail_chimp_api_key: "8a84a8158382ef8228699d8952fecce3-us8"
-  mail_chimp_list_key: "819d325cfb"
+  mail_chimp_api_key: "5f4bb7c596078d9d538075c5a3094abd-us8"
+  mail_chimp_list_key: "6c61fd5daa"
   facebook_key: ""
   facebook_secret: ""
   site_url: "http://localhost:3000"
   
 staging:
-  mail_chimp_api_key: "8a84a8158382ef8228699d8952fecce3-us8"
-  mail_chimp_list_key: "51cd7b5e83"
+  mail_chimp_api_key: "5f4bb7c596078d9d538075c5a3094abd-us8"
+  mail_chimp_list_key: "6c61fd5daa"
   facebook_key: "251649335038800"
   facebook_secret: "5d9b536ea4c867a3620bead806c47a0b"
   site_url: "http://staging-toddlerosity.herokuapp.com"
   
 production:
-  mail_chimp_api_key: "8a84a8158382ef8228699d8952fecce3-us8"
-  mail_chimp_list_key: "enter facebook key"
-  site_url: "http://localhost:3000"
+  mail_chimp_api_key: "5f4bb7c596078d9d538075c5a3094abd-us8"
+  mail_chimp_list_key: "6c61fd5daa"
+  site_url: "http://mycombate.com"
