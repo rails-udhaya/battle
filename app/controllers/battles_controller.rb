@@ -30,4 +30,16 @@ class BattlesController < ApplicationController
 				@comment.save
 		end
 		
+		def battles_search
+				@battles = Battle.where("title LIKE ? OR description LIKE ? ", "%#{params['query']}%","%#{params['query']}%")
+				@items = Item.where("title LIKE ?  ", "%#{params['query']}%")
+						p = []
+						@items.each do |item| 
+						p << item.battle
+						end
+						@full = @battles + p
+						@battles = @full.collect{|x| x if x && x.is_public == true}
+						@battles = @battles.compact.blank?  ? Battle.where('is_public = ?', true).order('created_at DESC').limit(10) : @battles.compact.uniq
+		end
+		
 end

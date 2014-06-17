@@ -21,6 +21,7 @@ Fight::Application.routes.draw do
         collection do
          post 'battle_is_public'
          post 'create_battle_main_asset'
+        
        end
       end
     end
@@ -29,6 +30,7 @@ Fight::Application.routes.draw do
        collection do
         post 'vote'
         post 'comment'
+         get 'battles_search'
       end
   end
 
