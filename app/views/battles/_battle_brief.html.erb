@@ -348,7 +348,7 @@ console.log(data)
 					 .enter().append("text")
 						 .attr("class", "labelText")
      .attr("x", function(d) { return x(d.letter)+30; })
-      .attr("y", function(d) { return y(d.frequency) - 15; })
+      .attr("y", function(d) { return (height - y(d.frequency) >= 250) ? -16 : y(d.frequency) - 15; })
       .attr("dy", ".75em")
       .text(function(d) { return nFormatter(d.frequency);});
 
